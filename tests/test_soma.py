@@ -6,5 +6,4 @@ def test_soma():
 
 
 def test_soma_falha():
-    assert 5 == soma(1, 1)
-
+    assert 2 == soma(1, 1)
