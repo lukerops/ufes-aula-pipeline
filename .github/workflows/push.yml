@@ -1,0 +1,15 @@
+name: Pipeline de Teste
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  tests:
+    name: Roda o Pytest
+    container: python:3.11-slim
+    steps:
+      - uses: actions/checkout@v3
+      - run: pip install pytest
+      - run: pytest .
