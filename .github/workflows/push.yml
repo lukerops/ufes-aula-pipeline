@@ -8,6 +8,7 @@ on:
 jobs:
   tests:
     name: Roda o Pytest
+    runs-on: ubuntu-latest
     container: python:3.11-slim
     steps:
       - uses: actions/checkout@v3
