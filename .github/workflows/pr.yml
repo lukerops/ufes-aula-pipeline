@@ -1,0 +1,19 @@
+name: Pipeline de PR
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - **/*.py
+      - .github/workflows/pr.yml
+
+jobs:
+  tests:
+    name: Roda o Pytest
+    runs-on: ubuntu-latest
+    container: python:3.11-slim
+    steps:
+      - uses: actions/checkout@v3
+      - run: pip install pytest
+      - run: pytest .
