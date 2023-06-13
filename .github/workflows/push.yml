@@ -28,4 +28,5 @@ jobs:
       - run: echo "${{secrets.GITHUB_TOKEN}}" | docker login ghrc.io -u ${{ github.actor }} --password-stdin
       - run: docker build -t "ghcr.io/lukerops/ufes-aula-pipeline:latest" -f Dockerfile .
       - run: docker images
+      - run: docker run "ghcr.io/lukerops/ufes-aula-pipeline:latest"
       - run: docker push "ghcr.io/lukerops/ufes-aula-pipeline:latest"
