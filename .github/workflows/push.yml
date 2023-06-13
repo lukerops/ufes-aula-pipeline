@@ -20,4 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: tests
     steps:
-      - run: echo hello world
+      - uses: actions/checkout@v3
+      - run: docker build -t ufes-aula-pipeline:${{ GITHUB_SHA }} -f Dockerfile .
+      - run: docker images
