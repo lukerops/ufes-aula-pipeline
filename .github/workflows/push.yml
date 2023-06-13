@@ -21,5 +21,5 @@ jobs:
     needs: tests
     steps:
       - uses: actions/checkout@v3
-      - run: docker build -t ufes-aula-pipeline:${{ GITHUB_SHA }} -f Dockerfile .
+      - run: docker build -t "ufes-aula-pipeline:latest" -f Dockerfile .
       - run: docker images
